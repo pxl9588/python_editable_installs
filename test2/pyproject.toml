@@ -1,0 +1,37 @@
+[tool.shrinkwrap]
+requirements_file="requirements.txt"
+
+[tool.shrinkwrap.build]
+module_dir = "src/"
+module_name = "a.b.client"
+
+[build-system]
+requires = ["bloomberg.shrinkwrap"]
+build-backend = "bloomberg.shrinkwrap.build"
+
+[tool.pylint]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
+extend-exclude = '''
+/(
+    \.venv
+    | _berg
+)/
+'''
+
+
+
+[tool.pylint.messages_control]
+enable = ["logging-not-lazy"]
+disable = [
+    "fixme",
+    "too-few-public-methods",
+    # Documentation
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "logging-fstring-interpolation",
+    "broad-except"
+]

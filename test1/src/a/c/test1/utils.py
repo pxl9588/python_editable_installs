@@ -1,0 +1,2 @@
+class CUtils:
+    pass
